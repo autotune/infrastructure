@@ -9,7 +9,7 @@ terraform {
 }
 
 locals {
-  extra_manifests = join(" ", var.manifests)
+  // extra_manifests = join(" ", var.manifests)
 
   secret_name = "argocd-repository-credentials"
 
@@ -115,7 +115,7 @@ resource "helm_release" "argocd" {
 
   values = [yamlencode(local.values)]
 }
-
+/*
 resource "null_resource" "extra_manifests" {
   triggers = {
     extra_manifests = local.extra_manifests
@@ -129,6 +129,6 @@ resource "null_resource" "extra_manifests" {
     command = "kubectl delete -f '${self.triggers.extra_manifests}'"
     when    = destroy
   }
-
+*/
   depends_on = [helm_release.argocd]
 }
