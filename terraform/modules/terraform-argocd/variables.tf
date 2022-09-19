@@ -66,3 +66,9 @@ variable "rbac_config" {
   default     = {}
   description = "Additional rbac config to be added to the Argocd rbac configmap"
 }
+
+
+variable "git_access_token" {
+  default     = {}
+  description = "Git access token"
+}
