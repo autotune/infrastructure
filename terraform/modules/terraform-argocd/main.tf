@@ -129,6 +129,6 @@ resource "null_resource" "extra_manifests" {
     command = "kubectl delete -f '${self.triggers.extra_manifests}'"
     when    = destroy
   }
-*/
   depends_on = [helm_release.argocd]
 }
+*/
