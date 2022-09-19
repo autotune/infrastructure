@@ -72,3 +72,8 @@ variable "git_access_token" {
   default     = {}
   description = "Git access token"
 }
+
+variable "git_url" {
+  default     = {}
+  description = "Git url"
+}
