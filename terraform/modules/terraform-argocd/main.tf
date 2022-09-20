@@ -104,7 +104,6 @@ locals {
 
 # ArgoCD Charts
 resource "helm_release" "argocd" {
-  provider         = helm.cinema
   name             = "argocd"
   repository       = "https://argoproj.github.io/argo-helm"
   chart            = "argo-cd"
